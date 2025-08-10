@@ -18,21 +18,22 @@ class _RecipesListPageState extends State<RecipesListPage> {
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(_onScroll);
+    // _scrollController.addListener(_onScroll);
     context.read<RecipeCubit>().fetchRecipes();
   }
 
-  void _onScroll() {
-    if (_scrollController.position.pixels ==
-        _scrollController.position.maxScrollExtent) {
-      context.read<RecipeCubit>().fetchRecipes();
-    }
-  }
+  // void _onScroll() {
+  //   if (_scrollController.position.pixcdels ==
+  //       _scrollController.position.maxScrollExtent) {
+  //     context.read<RecipeCubit>().fetchRecipes();
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Text('Рецепты'),
         actions: [
           IconButton(

@@ -1,5 +1,5 @@
-import '../../data/models/recipe_model.dart';
-import '../entities/recipe.dart';
+import 'package:test_task_made_in_dream/feature/data/models/recipe_model.dart';
+import 'package:test_task_made_in_dream/feature/domain/entities/recipe.dart';
 
 extension RecipeMapper on RecipeModel {
   Recipe toEntity() {
@@ -8,19 +8,13 @@ extension RecipeMapper on RecipeModel {
       title: title,
       text: text,
       image: image,
-      steps: steps,
+      steps: steps.map((step) => step.text).toList(),
       prepTime: prepTime,
       energy: energy,
-      ingredientsOne: ingredientsOne,
-      ingredientsTwo: ingredientsTwo,
-      dateAdded: dateAdded,
+      ingredientsOne: ingredientsOne.map((i) => '${i.title} ${i.text}').toList(),
+      ingredientsTwo: ingredientsTwo.map((i) => '${i.title} ${i.text}').toList(),
+      dateAdded: dateAdded.toString(),
       link: link,
     );
-  }
-}
-
-extension RecipeListMapper on List<RecipeModel> {
-  List<Recipe> toEntities() {
-    return map((model) => model.toEntity()).toList();
   }
 }

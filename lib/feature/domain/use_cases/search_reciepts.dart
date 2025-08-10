@@ -1,11 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:test_task_made_in_dream/core/errors/failures.dart';
+import 'package:test_task_made_in_dream/feature/domain/entities/recipe.dart';
+import 'package:test_task_made_in_dream/feature/domain/repositories/recipe_repository.dart';
 import 'package:test_task_made_in_dream/feature/domain/use_cases/usecase.dart';
-
-import '../../../core/errors/failures.dart';
-import '../entities/recipe.dart';
-import '../repositories/recipe_repository.dart';
-
 
 class SearchRecipes implements UseCase<List<Recipe>, SearchRecipesParams> {
   final RecipeRepository repository;
